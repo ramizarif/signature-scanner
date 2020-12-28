@@ -1,4 +1,5 @@
 import pandas
+import scans
 from graphics import *
 
 def clicked(click, rect):
@@ -38,29 +39,6 @@ def start():
     hpRect.draw(win)
     hpText.draw(win)
 
-    acerp1 = 80
-    acerp2 = 120
-    acerRect = Rectangle(Point(250 - acerp1, 250 + 50 - acerp2), Point(250 + acerp1, 250 + 50 - acerp1))
-    acerRect.setFill('silver')
-    cenx = acerRect.getCenter().getX()
-    ceny = acerRect.getCenter().getY()
-    acerText = Text(Point(cenx, ceny), 'ACER Scanner')
-    acerText.setTextColor('black')
-    acerText.setStyle('bold')
-    acerRect.draw(win)
-    acerText.draw(win)
-
-    customp1 = 80
-    customp2 = 120
-    customRect = Rectangle(Point(250 - customp1, 250 - customp2), Point(250 + customp1, 250 - customp1))
-    customRect.setFill('silver')
-    cenx = customRect.getCenter().getX()
-    ceny = customRect.getCenter().getY()
-    customText = Text(Point(cenx, ceny), 'Custom')
-    customText.setTextColor('black')
-    customText.setStyle('bold')
-    customRect.draw(win)
-    customText.draw(win)
 
     exitp1 = 80
     exitp2 = 120
@@ -81,15 +59,6 @@ def start():
         if clicked(click, hpRect):
             win.close() 
             var = 'hp'
-            print(var)
-            return var
-        elif clicked(click, acerRect): 
-            win.close()
-            var = 'acer'
-            return var
-        elif clicked(click, customRect): 
-            win.close()
-            var = 'custom'
             return var
         else: 
             click = win.checkMouse()
